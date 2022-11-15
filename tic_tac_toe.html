@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="tic_tac_toe.css">
+</head>
+<body>
+    <section id="whole">
+        <h3>Welcome to my Tic Tac Toe</h3>
+
+        <section>
+
+            <div id="buttons">
+
+                <button id="play_button" onclick="play()">Play</button>
+    
+                <button id="restart" onclick="restart_game()">Restart</button>
+            </div>
+            <div id="xoro">
+
+                <button id="sidex" onclick="choose_side(this)">X</button>
+                OR
+                <button id="sideo" onclick="choose_side(this)">O</button>
+            </div>
+
+        </section>
+
+        <section id="game">
+            <section id="top">
+                <button id="a1" class="box" onclick="press(a1)"></button>
+                <button id="a2" class="box" onclick="press(a2)"></button>
+                <button id="a3" class="box" onclick="press(a3)"></button>
+            </section>
+
+            <section id="middle">
+                <button id="b1" class="box" onclick="press(b1)"></button>
+                <button id="b2" class="box" onclick="press(b2)"></button>
+                <button id="b3" class="box" onclick="press(b3)"></button>
+            </section>
+
+            <section id="bottom">
+                <button id="c1" class="box" onclick="press(c1)"></button>
+                <button id="c2" class="box" onclick="press(c2)"></button>
+                <button id="c3" class="box" type="button" onclick="press(c3)"></button>
+            </section>
+            
+            <section>
+                <div id="result" ></div>
+                <div id="score"></div>
+
+            </section>
+        </section>
+    </section>
+</body>
+<script>
+    var input= '';
+    var xscore=0;
+    var oscore=0;
+    function play(){
+        const game=document.getElementById('game');
+        play_button.style.display='none';
+        xoro.style.display='block';
+    }
+    
+    function choose_side(element) {
+        xoro.style.display='none'
+        game.style.display='block';
+        input=element.innerText;
+        result.innerText='You have chosen '+ input;
+        
+
+    }
+
+    function restart_game() {
+        xoro.style.display='block';
+        result.innerText='';
+        score.innerText='';
+        restart.style.display='none';
+        game.style.display='none';
+        a1.innerText=''
+        a2.innerText=''
+        a3.innerText=''
+        b1.innerText=''
+        b2.innerText=''
+        b3.innerText=''
+        c1.innerText=''
+        c2.innerText=''
+        c3.innerText=''
+        a1.disabled=false
+        a2.disabled=false
+        a3.disabled=false
+        b1.disabled=false
+        b2.disabled=false
+        b3.disabled=false
+        c1.disabled=false
+        c2.disabled=false
+        c3.disabled=false
+        
+    }
+
+    function press(x) {
+        if (x.innerText=='') {
+
+            if (input=='X') {
+                x.innerText=input;
+                input= 'O';
+                if (a1.innerText=='X'&&a2.innerText=='X'&&a3.innerText=='X') {
+                    result.innerText= 'X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                    
+                }
+    
+                if (b1.innerText=='X'&&b2.innerText=='X'&&b3.innerText=='X') {
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (c1.innerText=='X'&&c2.innerText=='X'&&c3.innerText=='X') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a1.innerText=='X'&&b1.innerText=='X'&&c1.innerText=='X') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a2.innerText=='X'&&b2.innerText=='X'&&c2.innerText=='X') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a3.innerText=='X'&&b3.innerText=='X'&&c3.innerText=='X') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a1.innerText=='X'&&b2.innerText=='X'&&c3.innerText=='X') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a3.innerText=='X'&&b2.innerText=='X'&&c1.innerText=='X') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='X WINS'
+                    restart.style.display= 'inline';
+                    xscore = ++xscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+
+            }else{
+                x.innerText=input;
+                input= 'X';
+                if (a1.innerText=='O'&&a2.innerText=='O'&&a3.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText= 'O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (b1.innerText=='O'&&b2.innerText=='O'&&b3.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (c1.innerText=='O'&&c2.innerText=='O'&&c3.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a1.innerText=='O'&&b1.innerText=='O'&&c1.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a2.innerText=='O'&&b2.innerText=='O'&&c2.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a3.innerText=='O'&&b3.innerText=='O'&&c3.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a1.innerText=='O'&&b2.innerText=='O'&&c3.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+    
+                if (a3.innerText=='O'&&b2.innerText=='O'&&c1.innerText=='O') {
+                    result.style.display='block'
+                    score.style.display='block'
+                    result.innerText='O WINS'
+                    restart.style.display= 'inline';
+                    oscore = ++oscore;
+                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    a1.disabled=true
+                    a2.disabled=true
+                    a3.disabled=true
+                    b1.disabled=true
+                    b2.disabled=true
+                    b3.disabled=true
+                    c1.disabled= true
+                    c2.disabled=true
+                    c3.disabled= true
+                }
+            }
+
+            
+            
+        }else{
+
+        }
+    }    
+
+</script>
+
+</html>

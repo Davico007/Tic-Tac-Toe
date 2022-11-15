@@ -1,0 +1,128 @@
+*{
+    text-align: center;
+}
+
+#whole{
+    border: green 10px solid ;
+    width: 98%;
+    height: 94vh;
+    
+}
+#game{
+    border: green 10px solid ;
+    width: 360px;
+    height: 360px;
+    display: none;
+    margin: auto;
+    margin-top: 30px;
+}
+#top{
+    
+    height: 120px;
+    display: flex;
+    flex-flow: row;
+}
+#middle{
+    
+    height: 120px;
+    display: flex;
+    flex-flow: row;
+}
+#bottom{
+    
+    height: 120px;
+    display: flex;
+    flex-flow: row;
+}
+#a1{
+    
+    background-color: aqua;
+    width: 120px;
+    height: 120px;
+}
+#a2{
+    
+    width: 120px;
+    height: 120px;
+}
+#a3{
+    
+    background-color: aqua;
+    width: 120px;
+    height: 120px;
+}
+#b1{
+    
+    width: 120px;
+    height: 120px;
+}
+#b2{
+    
+    background-color: aqua;
+    width: 120px;
+    height: 120px;
+}
+#b3{
+    
+    width: 120px;
+    height: 120px;
+}
+#c1{
+    
+    background-color: aqua;
+    width: 120px;
+    height: 120px;
+}
+#c2{
+    
+    width: 120px;
+    height: 120px;
+}
+#c3{
+    
+    background-color: aqua;
+    width: 120px;
+    height: 120px;
+}
+#play_button,#sidex,#sideo{
+    display: inline;
+    border: double green ;
+    border-radius: 45%;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+}
+#play_button:hover,.box:hover,#restart:hover,#sidex:hover,#sideo:hover{
+    background-color: grey;
+}
+.box{
+    border: none;
+    font-size: 5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+#restart{
+    text-align: center;
+    display: none;
+    border: double green ;
+    border-radius: 45%;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+}
+#result,#score{
+    text-align: center;
+    display: non;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    color: green;
+}
+#xoro{
+    display: none;
+}
+#buttons{
+    text-align: center;
+}
