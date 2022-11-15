@@ -9,7 +9,7 @@
 </head>
 <body>
     <section id="whole">
-        <h3>Welcome to my Tic Tac Toe</h3>
+        <h3 id="welcome">Welcome to my Tic Tac Toe</h3>
 
         <section>
 
@@ -57,24 +57,35 @@
 </body>
 <script>
     var input= '';
-    var xscore=0;
-    var oscore=0;
+    var player1;
+    var player2;
+    var onescore=0;
+    var twoscore=0;
     function play(){
         const game=document.getElementById('game');
         play_button.style.display='none';
         xoro.style.display='block';
+        welcome.innerText='Player 1, choose your sign'
     }
     
     function choose_side(element) {
         xoro.style.display='none'
         game.style.display='block';
+        player1=element.innerText;
+        if (player1=='X') {
+            player2='O';
+        }
+        if (player1=='O') {
+            player2='X';
+        }
         input=element.innerText;
-        result.innerText='You have chosen '+ input;
-        
+        result.innerText='Player 1 is '+ input+'\n Player 2 is '+ player2;
+        welcome.innerText=''
 
     }
 
     function restart_game() {
+        welcome.innerText='Player 1, choose your sign'
         xoro.style.display='block';
         result.innerText='';
         score.innerText='';
@@ -108,10 +119,17 @@
                 x.innerText=input;
                 input= 'O';
                 if (a1.innerText=='X'&&a2.innerText=='X'&&a3.innerText=='X') {
-                    result.innerText= 'X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -125,10 +143,17 @@
                 }
     
                 if (b1.innerText=='X'&&b2.innerText=='X'&&b3.innerText=='X') {
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -143,10 +168,17 @@
                 if (c1.innerText=='X'&&c2.innerText=='X'&&c3.innerText=='X') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -161,10 +193,17 @@
                 if (a1.innerText=='X'&&b1.innerText=='X'&&c1.innerText=='X') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -179,10 +218,17 @@
                 if (a2.innerText=='X'&&b2.innerText=='X'&&c2.innerText=='X') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -197,10 +243,17 @@
                 if (a3.innerText=='X'&&b3.innerText=='X'&&c3.innerText=='X') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -215,10 +268,17 @@
                 if (a1.innerText=='X'&&b2.innerText=='X'&&c3.innerText=='X') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -233,10 +293,17 @@
                 if (a3.innerText=='X'&&b2.innerText=='X'&&c1.innerText=='X') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='X WINS'
+                    
                     restart.style.display= 'inline';
-                    xscore = ++xscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='X') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='X') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -254,10 +321,17 @@
                 if (a1.innerText=='O'&&a2.innerText=='O'&&a3.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText= 'O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -272,10 +346,17 @@
                 if (b1.innerText=='O'&&b2.innerText=='O'&&b3.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -290,10 +371,17 @@
                 if (c1.innerText=='O'&&c2.innerText=='O'&&c3.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -308,10 +396,17 @@
                 if (a1.innerText=='O'&&b1.innerText=='O'&&c1.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -326,10 +421,17 @@
                 if (a2.innerText=='O'&&b2.innerText=='O'&&c2.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -344,10 +446,17 @@
                 if (a3.innerText=='O'&&b3.innerText=='O'&&c3.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -362,10 +471,17 @@
                 if (a1.innerText=='O'&&b2.innerText=='O'&&c3.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -380,10 +496,17 @@
                 if (a3.innerText=='O'&&b2.innerText=='O'&&c1.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
-                    result.innerText='O WINS'
+                    
                     restart.style.display= 'inline';
-                    oscore = ++oscore;
-                    score.innerText='Score: X('+ xscore + ') - (' + oscore + ')O';
+                    if (player1=='O') {
+                        onescore = ++onescore;
+                        result.innerText='Player 1 WINS'
+                    }
+                    if (player2=='O') {
+                        twoscore= ++twoscore;
+                        result.innerText='Player 2 WINS'
+                    }
+                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
