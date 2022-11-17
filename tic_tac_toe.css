@@ -84,7 +84,7 @@
     width: 120px;
     height: 120px;
 }
-#play_button,#sidex,#sideo{
+#play_button,#sidex,#sideo,#onevsone,#onevscpu,#quitter{
     display: inline;
     border: double green ;
     border-radius: 45%;
@@ -92,7 +92,7 @@
     width: 100px;
     font-weight: bold;
 }
-#play_button:hover,.box:hover,#restart:hover,#sidex:hover,#sideo:hover{
+#play_button:hover,.box:hover,#replay:hover,#sidex:hover,#sideo:hover,#onevsone:hover,#onevsone:hover,#quitter:hover{
     background-color: grey;
 }
 .box{
@@ -102,7 +102,7 @@
     font-weight: bold;
     text-align: center;
 }
-#restart{
+#replay{
     text-align: center;
     display: none;
     border: double green ;
@@ -120,7 +120,7 @@
     font-size: 2rem;
     color: green;
 }
-#xoro{
+#xoro,#opponent,#quitter{
     display: none;
 }
 #buttons{

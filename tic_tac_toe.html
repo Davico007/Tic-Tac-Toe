@@ -17,13 +17,21 @@
 
                 <button id="play_button" onclick="play()">Play</button>
     
-                <button id="restart" onclick="restart_game()">Restart</button>
+                <button id="replay" onclick="replay_game()">Replay</button>
+
+                <button id="quitter" onclick="quit_game()">Quit</button>
             </div>
             <div id="xoro">
 
                 <button id="sidex" onclick="choose_side(this)">X</button>
                 OR
                 <button id="sideo" onclick="choose_side(this)">O</button>
+            </div>
+            <div id="opponent">
+
+                <button id="onevsone" onclick="multiplayer()">2 Players</button>
+                OR
+                <button id="onevscpu" onclick="vscomputer()">1 vs CPU</button>
             </div>
 
         </section>
@@ -57,6 +65,7 @@
 </body>
 <script>
     var input= '';
+    var players;
     var player1;
     var player2;
     var onescore=0;
@@ -64,13 +73,62 @@
     function play(){
         const game=document.getElementById('game');
         play_button.style.display='none';
-        xoro.style.display='block';
+        opponent.style.display='block';
+        welcome.innerText='A brain or A code?'
+        // xoro.style.display='block';
+        // welcome.innerText='Player 1, choose your sign'
+    }
+
+    function multiplayer() {
         welcome.innerText='Player 1, choose your sign'
+        result.innerText="You've chosen a brain... better than yours?"
+        opponent.style.display='none'
+        xoro.style.display='block'
+        game.style.display='block';
+        input=''
+        a1.disabled=true
+        a2.disabled=true
+        a3.disabled=true
+        b1.disabled=true
+        b2.disabled=true
+        b3.disabled=true
+        c1.disabled= true
+        c2.disabled=true
+        c3.disabled= true
+        // choose_side();
+    }
+
+    function vscomputer() {
+        welcome.innerText='Choose your sign'
+        result.innerText="You've chosen to challenge a code."
+        opponent.style.display='none'
+        xoro.style.display='block'
+        game.style.display='block';
+        input=''
+        a1.disabled=true
+        a2.disabled=true
+        a3.disabled=true
+        b1.disabled=true
+        b2.disabled=true
+        b3.disabled=true
+        c1.disabled= true
+        c2.disabled=true
+        c3.disabled= true
+        // choose_side();
     }
     
     function choose_side(element) {
         xoro.style.display='none'
         game.style.display='block';
+        a1.disabled=false
+        a2.disabled=false
+        a3.disabled=false
+        b1.disabled=false
+        b2.disabled=false
+        b3.disabled=false
+        c1.disabled=false
+        c2.disabled=false
+        c3.disabled=false
         player1=element.innerText;
         if (player1=='X') {
             player2='O';
@@ -84,12 +142,13 @@
 
     }
 
-    function restart_game() {
+    function replay_game() {
         welcome.innerText='Player 1, choose your sign'
         xoro.style.display='block';
         result.innerText='';
         score.innerText='';
-        restart.style.display='none';
+        replay.style.display='none';
+        quitter.style.display= 'none';
         game.style.display='none';
         a1.innerText=''
         a2.innerText=''
@@ -112,6 +171,27 @@
         
     }
 
+    function quit_game() {
+        welcome.innerText='Welcome to my Tic Tac Toe'
+        play_button.style.display='inline';
+        replay.style.display= 'none';
+        quitter.style.display= 'none';
+        game.style.display= 'none'
+        score.innerText=''
+        a1.innerText=''
+        a2.innerText=''
+        a3.innerText=''
+        b1.innerText=''
+        b2.innerText=''
+        b3.innerText=''
+        c1.innerText=''
+        c2.innerText=''
+        c3.innerText=''
+        onescore=0
+        twoscore=0
+        
+    }
+
     function press(x) {
         if (x.innerText=='') {
 
@@ -120,7 +200,8 @@
                 input= 'O';
                 if (a1.innerText=='X'&&a2.innerText=='X'&&a3.innerText=='X') {
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -144,7 +225,8 @@
     
                 if (b1.innerText=='X'&&b2.innerText=='X'&&b3.innerText=='X') {
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -169,7 +251,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -194,7 +277,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -219,7 +303,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -244,7 +329,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -269,7 +355,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -294,7 +381,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -322,7 +410,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -347,7 +436,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -372,7 +462,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -397,7 +488,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -422,7 +514,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -447,7 +540,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -472,7 +566,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
@@ -497,7 +592,8 @@
                     result.style.display='block'
                     score.style.display='block'
                     
-                    restart.style.display= 'inline';
+                    replay.style.display= 'inline';
+                    quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
                         result.innerText='Player 1 WINS'
