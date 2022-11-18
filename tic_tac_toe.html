@@ -70,6 +70,7 @@
     var player2;
     var onescore=0;
     var twoscore=0;
+    var boxes=[a1,a2,a3,b1,b2,b3,c1,c2,c3];
     function play(){
         const game=document.getElementById('game');
         play_button.style.display='none';
@@ -80,6 +81,7 @@
     }
 
     function multiplayer() {
+        players=2
         welcome.innerText='Player 1, choose your sign'
         result.innerText="You've chosen a brain... better than yours?"
         opponent.style.display='none'
@@ -99,8 +101,9 @@
     }
 
     function vscomputer() {
+        players=1
         welcome.innerText='Choose your sign'
-        result.innerText="You've chosen to challenge a code."
+        result.innerText="You really think you can defeat a code...Ogbon!"
         opponent.style.display='none'
         xoro.style.display='block'
         game.style.display='block';
@@ -115,9 +118,13 @@
         c2.disabled=true
         c3.disabled= true
         // choose_side();
+
     }
     
+    
     function choose_side(element) {
+
+
         xoro.style.display='none'
         game.style.display='block';
         a1.disabled=false
@@ -137,7 +144,13 @@
             player2='X';
         }
         input=element.innerText;
-        result.innerText='Player 1 is '+ input+'\n Player 2 is '+ player2;
+        if (players==1) {
+            result.innerText='You are '+ input+'\n CPU is '+ player2;
+        }
+        if (players==2) {
+            result.innerText='Player 1 is '+ input+'\n Player 2 is '+ player2;
+            
+        }
         welcome.innerText=''
 
     }
@@ -168,6 +181,7 @@
         c1.disabled=false
         c2.disabled=false
         c3.disabled=false
+        boxes=[a1,a2,a3,b1,b2,b3,c1,c2,c3];
         
     }
 
@@ -189,28 +203,62 @@
         c3.innerText=''
         onescore=0
         twoscore=0
+        boxes=[a1,a2,a3,b1,b2,b3,c1,c2,c3];
         
     }
 
     function press(x) {
+
+        
         if (x.innerText=='') {
 
             if (input=='X') {
                 x.innerText=input;
                 input= 'O';
+                if (players==1) {
+                    input='X'
+                    boxes=boxes.filter(function(item){
+                        return item!==x
+                    })
+                    const randomIndex= Math.floor(Math.random() * boxes.length);
+                    const randomBox=boxes[randomIndex];
+                    randomBox.innerText='O'
+                    boxes=boxes.filter(function(item){
+                        return item!==randomBox
+                    })
+                    if (randomBox.innerText!='') {
+                        randomBox.disabled=true
+                    }
+                }
                 if (a1.innerText=='X'&&a2.innerText=='X'&&a3.innerText=='X') {
                     
                     replay.style.display= 'inline';
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -229,13 +277,30 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
+                        
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -255,13 +320,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -281,13 +362,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -307,13 +404,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -333,13 +446,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -359,13 +488,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -385,13 +530,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='X') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='X') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -406,6 +567,23 @@
             }else{
                 x.innerText=input;
                 input= 'X';
+
+                if (players==1) {
+                    input='O'
+                    boxes=boxes.filter(function(item){
+                        return item!==x
+                    })
+                    const randomIndex= Math.floor(Math.random() * boxes.length);
+                    const randomBox=boxes[randomIndex];
+                    randomBox.innerText='X'
+                    boxes=boxes.filter(function(item){
+                        return item!==randomBox
+                    })
+                    if (randomBox.innerText!='') {
+                        randomBox.disabled=true
+                    }
+                }
+
                 if (a1.innerText=='O'&&a2.innerText=='O'&&a3.innerText=='O') {
                     result.style.display='block'
                     score.style.display='block'
@@ -414,13 +592,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -440,13 +634,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -466,13 +676,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -492,13 +718,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -518,13 +760,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -544,13 +802,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -570,13 +844,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You ('+ onescore + ') \n CPU ('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true
@@ -596,13 +886,29 @@
                     quitter.style.display= 'inline';
                     if (player1=='O') {
                         onescore = ++onescore;
-                        result.innerText='Player 1 WINS'
+                        if (players==1) {
+                            result.innerText='You beat the code!'
+                        }
+
+                        if (players==2) {
+                            result.innerText='Player 1 WINS'
+                        }
                     }
                     if (player2=='O') {
                         twoscore= ++twoscore;
-                        result.innerText='Player 2 WINS'
+                        if (players==1) {
+                            result.innerText='CPU WINS'
+                        }
+                        if (players==2) {
+                            result.innerText='Player 2 WINS'
+                        }
                     }
-                    score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    if (players==1) {
+                        score.innerText='You('+ onescore + ') \n CPU('+twoscore+')';
+                    }
+                    if (players==2) {
+                        score.innerText='Player 1('+ onescore + ') \n Player 2('+twoscore+')';
+                    }
                     a1.disabled=true
                     a2.disabled=true
                     a3.disabled=true

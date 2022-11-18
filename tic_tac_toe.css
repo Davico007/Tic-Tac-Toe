@@ -92,7 +92,7 @@
     width: 100px;
     font-weight: bold;
 }
-#play_button:hover,.box:hover,#replay:hover,#sidex:hover,#sideo:hover,#onevsone:hover,#onevsone:hover,#quitter:hover{
+#play_button:hover,.box:hover,#replay:hover,#sidex:hover,#sideo:hover,#onevsone:hover,#onevscpu:hover,#quitter:hover{
     background-color: grey;
 }
 .box{
