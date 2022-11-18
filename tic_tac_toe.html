@@ -71,6 +71,9 @@
     var onescore=0;
     var twoscore=0;
     var boxes=[a1,a2,a3,b1,b2,b3,c1,c2,c3];
+
+    
+
     function play(){
         const game=document.getElementById('game');
         play_button.style.display='none';
@@ -215,6 +218,7 @@
             if (input=='X') {
                 x.innerText=input;
                 input= 'O';
+                
                 if (players==1) {
                     input='X'
                     boxes=boxes.filter(function(item){
@@ -237,7 +241,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -247,7 +251,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -269,6 +273,37 @@
                     c2.disabled=true
                     c3.disabled= true
                     
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (b1.innerText=='X'&&b2.innerText=='X'&&b3.innerText=='X') {
@@ -278,7 +313,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -288,7 +323,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -310,6 +345,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (c1.innerText=='X'&&c2.innerText=='X'&&c3.innerText=='X') {
@@ -321,7 +387,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -331,7 +397,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -352,6 +418,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a1.innerText=='X'&&b1.innerText=='X'&&c1.innerText=='X') {
@@ -363,7 +460,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -373,7 +470,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -394,6 +491,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a2.innerText=='X'&&b2.innerText=='X'&&c2.innerText=='X') {
@@ -405,7 +533,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -415,7 +543,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -436,6 +564,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a3.innerText=='X'&&b3.innerText=='X'&&c3.innerText=='X') {
@@ -447,7 +606,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -457,7 +616,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -478,6 +637,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a1.innerText=='X'&&b2.innerText=='X'&&c3.innerText=='X') {
@@ -489,7 +679,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -499,7 +689,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -520,6 +710,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a3.innerText=='X'&&b2.innerText=='X'&&c1.innerText=='X') {
@@ -531,7 +752,7 @@
                     if (player1=='X') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -541,7 +762,7 @@
                     if (player2=='X') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -562,6 +783,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
 
             }else{
@@ -593,7 +845,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -603,7 +855,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -624,6 +876,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (b1.innerText=='O'&&b2.innerText=='O'&&b3.innerText=='O') {
@@ -635,7 +918,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -645,7 +928,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -666,6 +949,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (c1.innerText=='O'&&c2.innerText=='O'&&c3.innerText=='O') {
@@ -677,7 +991,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -687,7 +1001,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -708,6 +1022,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a1.innerText=='O'&&b1.innerText=='O'&&c1.innerText=='O') {
@@ -719,7 +1064,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -729,7 +1074,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -750,6 +1095,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a2.innerText=='O'&&b2.innerText=='O'&&c2.innerText=='O') {
@@ -761,7 +1137,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -771,7 +1147,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -792,6 +1168,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a3.innerText=='O'&&b3.innerText=='O'&&c3.innerText=='O') {
@@ -803,7 +1210,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -813,7 +1220,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -834,6 +1241,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a1.innerText=='O'&&b2.innerText=='O'&&c3.innerText=='O') {
@@ -845,7 +1283,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -876,6 +1314,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
     
                 if (a3.innerText=='O'&&b2.innerText=='O'&&c1.innerText=='O') {
@@ -887,7 +1356,7 @@
                     if (player1=='O') {
                         onescore = ++onescore;
                         if (players==1) {
-                            result.innerText='You beat the code!'
+                            result.innerText='Wow! You really won.'
                         }
 
                         if (players==2) {
@@ -897,7 +1366,7 @@
                     if (player2=='O') {
                         twoscore= ++twoscore;
                         if (players==1) {
-                            result.innerText='CPU WINS'
+                            result.innerText='CPU WINS... as expected.'
                         }
                         if (players==2) {
                             result.innerText='Player 2 WINS'
@@ -918,6 +1387,37 @@
                     c1.disabled= true
                     c2.disabled=true
                     c3.disabled= true
+                }else{
+                    if (a1.innerText!=''&&a2.innerText!=''&&a3.innerText!=''&&b1.innerText!=''&&b2.innerText!=''&&b3.innerText!=''&&c1.innerText!=''&&c2.innerText!=''&&c3.innerText!='') {
+                        replay.style.display='inline'
+                        quitter.style.display='inline'
+                        if (players==1) {
+                            result.innerText="I didn't lose...nor win."
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                        if (players==2) {
+                            result.innerText='Two brains locking horns'
+                            a1.disabled=true
+                            a2.disabled=true
+                            a3.disabled=true
+                            b1.disabled=true
+                            b2.disabled=true
+                            b3.disabled=true
+                            c1.disabled=true
+                            c2.disabled=true
+                            c3.disabled= true
+                        }
+
+                    }
                 }
             }
 
